@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>age</title>
+        <script>
+            var tday=new Date("2023-04-19")
+            var bday=new Date("2002-06-01")
+            var age=((tday.getTime()-bday.getTime())/86400000)/365
+            var days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            document.write("Birthday day is "+days[bday.getDay()]+" and age is "+age)
+        </script>
+    </head>
+</html>
