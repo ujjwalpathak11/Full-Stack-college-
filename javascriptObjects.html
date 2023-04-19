@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+window objects explanation
+</title>
+</head>
+<script>
+function alertCall(){
+alert('alert');
+}
+function doPrompt(){
+let name=prompt('Write your name')
+document.getElementById('name').innerHTML=`Hi ${name}!`;
+}
+function Confirm(){
+confirm('Press a button')
+}
+let myWindow;
+function openWin() {
+myWindow = window.open("", "", "width=200,height=100");
+}
+function closeWin() {
+myWindow.close();
+}
+</script>
+<body>
+<ol>
+<li>
+<h3>An alert box is a pop-up window that displays a message to the user.
+<br>
+<pre>
+<code>
+&lt;script&gt;
+alert("Your message goes here");
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="alertCall()">Click to see alert pop up</button>
+</li>
+<li>
+<h3>A prompt box is a pop-up window that displays a message to the user and
+allows them to enter input
+<br>
+<pre>
+<code>
+&lt;script&gt;
+prompt('Write your name')
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="doPrompt()">Prompt</button>
+<div id="name"></div>
+</li>
+<li>
+<h3>A confirm box is a pop-up window that displays a message to the user and
+asks for their confirmation.
+<pre>
+<code>
+&lt;script&gt;
+confirm('Press a button')
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="Confirm()">Confirm</button>
+</li>
+<li>
+<h3>`window.open(url, name, specs, replace)`: Opens a new browser window or
+tab with the specified URL, name, and window features. The `replace` parameter
+specifies whether to replace the current page in the browser history.`window.open(url,
+name, specs, replace)`: Opens a new browser window or tab with the specified URL,
+name, and window features. The `replace` parameter specifies whether to replace the
+current page in the browser history. <br>
+<pre>
+<code>
+&lt;script&gt;
+window.open("", "", "width=200,height=100");
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="openWin()">Open "myWindow"</button>
+</li>
+<li>
+<h3>window.close()`: Closes the current browser window or tab.<br><pre>
+<code>
+&lt;script&gt;
+window.close();
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="closeWin()">Close "myWindow"</button>
+</li>
+<li>
+<h3>window.print() method opens the print dialog box and allows the user to
+print the current page.
+<br><pre>
+<code>
+&lt;script&gt;
+window.print();
+&lt;script&gt;
+</code>
+</pre>
+</h3>
+<button onclick="window.print()">Print this page</button>
+</li>
+</ol>
+</body>
+</html>
