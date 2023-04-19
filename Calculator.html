@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #btn{
+        margin: 3px;
+        background-color: white;
+        width: 70px;
+        height: 70px;
+        border: solid;
+        font-size: 25px;
+        font-weight: bold; 
+        border-radius: 10px;
+        }
+    #field{
+        margin: 5px;
+        height: 80px;
+        width: 280px;
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border: solid;
+        border-color: black;
+        font-size: 30px;
+        text-align: right;
+        padding-right: 20px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        function backspace()
+        {
+            var a=calc.display.value;
+            var size=a.length;
+            var s=a.substring(0,size-1);
+            calc.display.value=s;
+        }
+        function fact()
+        {
+            var x=calc.display.value;
+            var fact=1;
+            while(x>=1)
+            {
+                fact=fact*x;
+                x--;
+            }
+            calc.display.value=fact;
+        }
+        function power()
+        {
+            var a=calc.display.value;
+            var b=a.split(',');
+            calc.display.value=Math.pow(b[0],b[1]);
+        }
+    </script>
+    <form name="calc">
+    <table style="border: solid; background-color: lightseagreen; border-radius: 10px; ">
+        <tr>
+            <td colspan="4"><input type="text"id="field" name="display"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn" value="7" onclick="calc.display.value+='7'"></td>
+            <td><input type="button" id="btn" value="8" onclick="calc.display.value+='8'"></td>
+            <td><input type="button" id="btn" value="9" onclick="calc.display.value+='9'"></td>
+            <td><input type="button" id="btn" value="x" onclick="calc.display.value+='*'"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn" value="4" onclick="calc.display.value+='4'"></td>
+            <td><input type="button" id="btn" value="5" onclick="calc.display.value+='5'"></td>
+            <td><input type="button" id="btn" value="6" onclick="calc.display.value+='6'"></td>
+            <td><input type="button" id="btn" value="-" onclick="calc.display.value+='-'"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn" value="1" onclick="calc.display.value+='1'"></td>
+            <td><input type="button" id="btn" value="2" onclick="calc.display.value+='2'"></td>
+            <td><input type="button" id="btn" value="3" onclick="calc.display.value+='3'"></td>
+            <td><input type="button" id="btn" value="+" onclick="calc.display.value+='+'"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn" value="C" onclick="backspace()"></td>
+            <td><input type="button" id="btn" value="^" onclick="power()"></td>
+            <td><input type="button" id="btn" value="!" onclick="fact()"></td>
+            <td><input type="button" id="btn" value="," onclick="calc.display.value+=','"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn" value="AC" onclick="calc.display.value=' '"></td>
+            <td><input type="button" id="btn" value="0" onclick="calc.display.value+='0'"></td>
+            <td><input type="button" id="btn" value="/" onclick="calc.display.value+='/'"></td>
+            <td><input type="button" id="btn" value="=" onclick="calc.display.value=eval(calc.display.value)"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
