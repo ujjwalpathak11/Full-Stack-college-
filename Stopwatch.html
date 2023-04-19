@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stopwatch</title>
+    <style>
+        body 
+           {
+               font-family:Verdana, Geneva, Tahoma, sans-serif; 
+               background:silver; 
+               color:black;
+           }
+           h1
+           {
+               text-align: center;
+               font-size: xx-large;
+               font-weight: bold;
+           }
+           div
+           {
+               text-align: center;
+               font-size: xx-large;
+               font-weight: 20px;
+               
+           }
+           .button-container {
+                display: flex;
+                justify-content: center;
+            }
+            .button-container2 {
+                display: flex;
+                justify-content: center;
+            }
+            button
+            {
+                background-color:aliceblue;
+                padding: 7px 13px;
+                margin-left: 10px;
+                border-radius: 3px;
+            }
+   </style>
+  </head>
+  <body>
+    <h1>Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <br/>
+    <div class="button-container">
+        <button id="startButton" onclick="start()">Start</button>
+        <button id="stopButton" onclick="stop()">Stop</button>
+        <button id="resetButton" onclick="reset()">Reset</button>
+    </div>
+    <br>
+        <div class="button-container2">
+            <button id="lapButton" onclick="lap()">Save Lap</button>
+        </div>
+    <ul id="lapList"></ul>
+    <script>
+      var startTime;
+      var elapsedTime = 0;
+      var timerInterval;
+      var display = document.getElementById("display");
+      var lapList = document.getElementById("lapList");
+
+      function start() {
+        startTime = new Date().getTime() - elapsedTime;
+        timerInterval = setInterval(update, 10);
+        document.getElementById("startButton").disabled = true;
+      }
+
+      function stop() {
+        clearInterval(timerInterval);
+        document.getElementById("startButton").disabled = false;
+      }
+
+      function reset() {
+        clearInterval(timerInterval);
+        elapsedTime = 0;
+        display.innerHTML = "00:00:00";
+        lapList.innerHTML = "";
+        document.getElementById("startButton").disabled = false;
+      }
+
+      function lap() {
+        var lapTime = elapsedTime;
+        var lapItem = document.createElement("li");
+        lapItem.innerHTML = formatTime(lapTime);
+        lapList.appendChild(lapItem);
+      }
+
+      function update() {
+        var currentTime = new Date().getTime();
+        elapsedTime = currentTime - startTime;
+        display.innerHTML = formatTime(elapsedTime);
+      }
+
+      function formatTime(time) {
+        var hours = Math.floor(time / 3600000);
+        var minutes = Math.floor((time - hours * 3600000) / 60000);
+        var seconds = Math.floor((time - hours * 3600000 - minutes * 60000) / 1000);
+        var timeStr = formatTwoDigits(hours) + ":" + formatTwoDigits(minutes) + ":" + formatTwoDigits(seconds);
+        return timeStr;
+      }
+
+      function formatTwoDigits(num) {
+        return num < 10 ? "0" + num : num.toString();
+      }
+    </script>
+  </body>
+</html>
