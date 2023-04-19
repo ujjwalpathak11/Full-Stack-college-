@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Not coomon</title>
+        <script>
+            function notcommon(a,b)
+            {
+                let temp="";
+                for(let i=0; i<a.length; i++)
+                {
+                    let flag=0;
+                    for(let j=0; j<b.length; j++)
+                    {
+                        if(a[i]==b[j])
+                        {
+                            flag=1;
+                            break;
+                        }
+                    }
+                    if(flag==0)
+                        temp+=a[i];
+                }
+                for(let i=0; i<b.length; i++)
+                {
+                    let flag=0;
+                    for(let j=0; j<a.length; j++)
+                    {
+                        if(b[i]==a[j])
+                        {
+                            flag=1;
+                            break;
+                        }
+                    }
+                    if(flag==0)
+                        temp+=b[i];
+                }
+                return temp;
+            }
+            var a=prompt("Enter a: ");
+            var b=prompt("Enter b: ");
+            document.write(notcommon(a, b));
+        </script>
+    </head>
+</html>
