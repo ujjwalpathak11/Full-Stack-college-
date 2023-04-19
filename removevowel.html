@@ -1,0 +1,23 @@
+<!DOCTYPE
+<html>
+    <head>
+        <script>
+            function removevowel(str)
+            {
+                return str.replace(/[aeiou]/gi,'');
+            }
+            function solution(){
+            let input=document.getElementById("inputString").value;
+            let output=removevowel(input);
+            document.getElementById("outputString").innerHTML=output;
+            }
+        </script>
+    </head>
+    <body>
+        <h4>REMOVE VOWELS</h4>
+        <label for="inputString">Enter a string</label>
+        <input type="text" id="inputString">
+        <button onclick="solution()">remove vowel</button>
+        <p>output is : <span id="outputString"></span></p>
+    </body>
+</html>
