@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-size: larger;
+            text-align: center;
+        }
+    </style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change color</title>
+<script>
+function changeColor(){
+let a=Math.random()*256|0;
+let b=Math.random()*256|0;
+let c=Math.random()*256|0;
+document.body.style.backgroundColor=`rgb(${a},${b},${c})`;
+}
+</script>
+</head>
+<body>
+<a onclick="changeColor()">Click me for change the color</a>
+</body>
+</html>
