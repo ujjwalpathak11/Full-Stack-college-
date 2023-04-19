@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Case Conversion Example</title>
+	<script>
+		function convertCase(str) {
+			let converted = '';
+			for (let i = 0; i < str.length; i++) {
+				let char = str.charAt(i);
+				if (char === char.toUpperCase()) {
+					converted += char.toLowerCase();
+				} else {
+					converted += char.toUpperCase();
+				}
+			}
+			return converted;
+		}
+		
+		function convertCaseAndOutput() {
+			let input = document.getElementById("inputString").value;
+			let output = convertCase(input);
+			document.getElementById("outputString").innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<h1>Case Conversion Example</h1>
+	<label for="inputString">Enter a string:</label>
+	<input type="text" id="inputString">
+	<button onclick="convertCaseAndOutput()">Convert Case</button>
+	<p>The converted string is: <span id="outputString"></span></p>
+</body>
+</html>
