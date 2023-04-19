@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Password</title>
+        <script>
+            function generatePassword() {
+            let password = '';
+            const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const numbers = '0123456789';
+            const specialChars = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+            for (let i = 0; i < 2; i++) {
+                password += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            }
+            for (let i = 0; i < 2; i++) {
+                password += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            }
+            for (let i = 0; i < 1; i++) {
+                password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+            }
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\\:;?><,./-=';
+            for(let i = 0; i < 3; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length)); 
+            }
+            password = password.split('').sort(() => Math.random() - 0.5).join('');
+            return password;
+            }
+
+            alert(generatePassword()); 
+        </script>
+    </head>
+</html>
