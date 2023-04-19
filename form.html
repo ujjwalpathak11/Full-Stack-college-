@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registration Form Sample</title>
+        <style>
+            form{
+                color:black;
+                font-size: larger;
+            }
+            h1{
+                text-align: center;
+            }
+            td{
+                width: 2000px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body bgcolor="lavender"></body>
+        <form action=" Script URL" method="get">
+            <table border="0">
+                <h1>Entry Form</h1>
+                <tr>
+                <td>Enter your name :</td>
+                <td><input type="text" name="name" id="name"/></td></tr>
+                <tr>
+                <td>Enter your age :</td>
+                <td><input type="number" name="age" id="age"/></td></tr>
+                <tr>
+                <td>Enter your address :</td>
+                <td><textarea rows="5" cols="50"name="address" id="address">Enter address here </textarea></td></tr>
+                <tr>
+                <td>Sex:</td>
+                <td><input type="radio" name="Sex" value="male">Male
+                <input type="radio" name="Sex" value="female">Female</td></tr>
+                <tr>
+                <td>Nationality:</td>
+                <td><input list="nationality" name="nationality"></td>
+                <td><datalist id="nationality">
+                    <option value="India" selected>India</option>
+                    <option value="China" selected>China</option>
+                    <option value="America" selected>America</option>
+                    <option value="Japan" selected>Japan</option>
+                    <option value="Nepal" selected>Nepal</option>
+                </datalist></td></tr>
+                <tr>
+                <td>Language Known :</td>
+                <td><input type="checkbox" name="C++" value="on">C++
+                <br/>
+                <input type="checkbox" name="C" value="on">C
+                <br/>
+                <input type="checkbox" name="JAVA" value="on">JAVA
+                <br/>
+                <input type="checkbox" name="PYTHON" value="on">PYTHON
+                <br/>
+                <input type="checkbox" name="PHP" value="on">PHP
+                <br/>
+                <input type="checkbox" name="others" value="on">Others</td>
+                </tr>
+                <tr>
+                <td>Enter your password :</td>
+                <td><input type="password" name="password" id="password"></td>
+                </tr>
+                <tr>
+                <td><input type="reset" name="reset" value="Reset"/></td>
+                <td><input type="submit" name="submit" value="Submit"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
