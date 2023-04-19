@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Month Difference</title>
+        <script>
+            function getMonthDiff(date1, date2) {
+                const year1 = date1.getFullYear();
+                const year2 = date2.getFullYear();
+                const month1 = date1.getMonth();
+                const month2 = date2.getMonth();
+
+                const diffInMonths = (year2 - year1) * 12 + (month2 - month1);
+
+                return diffInMonths;
+          }
+          var dt1=new Date("June 13, 2014 08:11:00");
+          var dt2=new Date("October 19, 2014 11:13:00");
+          alert(getMonthDiff(dt1, dt2));
+        </script>
+    </head>
+</html>
