@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Integer Formatter</title>
+    <script>
+        function formatNumber() {
+            var input = document.getElementById("inputNumber").value;
+            var formattedNumber = input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.getElementById("output").textContent = formattedNumber;
+        }
+    </script>
+</head>
+<body>
+    <h1>Integer Formatter</h1>
+    <label for="inputNumber">Enter Number:</label>
+    <input type="number" id="inputNumber">
+    <br>
+    <button onclick="formatNumber()">Format</button>
+    <br>
+    <div id="output"></div>
+</body>
+</html>
